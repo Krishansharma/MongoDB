@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "4b6af878-813e-42a9-bc64-e76ff13e989d",
+		"name": "MongoDB_Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create_student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"63bfe7923ea9815fcbfe47fe\",\r\n    \"name\":\"Arpit\",\r\n     \"email\":\"arpit.verma@gmail.com\",\r\n     \"department\":{\r\n         \"departmentName\":\"Computer Science\",\r\n         \"location\":\"India\"\r\n     },\r\n     \"subjects\":[\r\n         {\r\n             \"subjectName\":\"React\",\r\n             \"marksObtained\":70\r\n         }\r\n     ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/student"
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/student/63bfe61f5059c72b07458845"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStudents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/student"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteStudentById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/student/63bfe7923ea9815fcbfe47fe"
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentsByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/studentByName/Arpit"
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentsByNameAndEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/studentByNameAndEmail?name=Arpit&email=arpit.gupta@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"studentByNameAndEmail"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Arpit"
+						},
+						{
+							"key": "email",
+							"value": "arpit.gupta@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentsByNameOrEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/studentByNameOrEmail?name=Arpit&email=arpit.gupta@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"studentByNameOrEmail"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Arpit"
+						},
+						{
+							"key": "email",
+							"value": "arpit.gupta@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllstudentswithPagination",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/student/withPagination?pageNo=1&pageSize=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"student",
+						"withPagination"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllstudentswithSort",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/student/allWithSorting"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStudentsbyDepartmentName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/student/allWithSorting?departmentName=IT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"student",
+						"allWithSorting"
+					],
+					"query": [
+						{
+							"key": "departmentName",
+							"value": "IT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStudentsbyEmailLike",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/student/allWithSorting?email=gmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"student",
+						"allWithSorting"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "gmail"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStudentsbyNameStartWith",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/student/nameStartWith?name=Vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"student",
+						"nameStartWith"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Vi"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
